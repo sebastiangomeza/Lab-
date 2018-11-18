@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="newpackage" v="4.4" rws="_15410138955802" Pws="_15410138955802" cws="_15410138955802" sm="false" xs="false" id="_15410138955801" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="MascotaPK" abs="false" class="Mascota" v="true" jbn="false" xre="false" m="false" rootElement="_15410138955801" id="_1541013917563">
+        <jpa:ath>Usser</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nombre" ft="false" id="_15410142300789">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="edad" ft="false" id="_154101432600011">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="color" ft="false" id="_15414553758584">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="raza" ft="false" id="_15414554166036">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="valor" ft="false" id="_15414554203337">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" connected-entity-id="_1541456607040" connected-attribute-id="_154145693920637" v="true" xvt="" name="foto" id="_154145693920738">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:one-to-many>
+            <jpa:one-to-one orp="false" optional="true" primaryKey="false" connected-entity-id="_1541455650656" connected-attribute-id="_154145699925439" v="true" xvt="" name="venta" id="_154145699925640">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" ft="false" id="_15410139176563">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Mascota.findAll">
+            <jpa:query>Select e from Mascota e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Mascota.findByNombre">
+            <jpa:query>Select m from Mascota m where m.nombre=:nombre</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Mascota.findByEdad">
+            <jpa:query>Select m from Mascota m where m.edad=:edad</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Mascota.findByColor">
+            <jpa:query>Select m from Mascota m where m.color=:color</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Mascota.findByRaza">
+            <jpa:query>Select m from Mascota m where m.raza=:raza</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Mascota.findByValor">
+            <jpa:query>Select m from Mascota m where m.valor=:valor</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ClientePK" abs="false" class="Cliente" v="true" jbn="false" xre="false" m="false" rootElement="_15410138955801" id="_1541013925812">
+        <jpa:ath>Usser</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="apellidos" ft="false" id="_15414555648019">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nombres" ft="false" id="_154145566068512">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:one-to-one orp="false" optional="true" primaryKey="false" connected-entity-id="_1541455650656" connected-attribute-id="_154145703442241" v="true" xvt="" name="venta" id="_154145703442242">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="int" v="true" xvt="" name="cedula" ft="false" id="_15410139258127">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Cliente.findAll">
+            <jpa:query>Select e from Cliente e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByApellidos">
+            <jpa:query>Select c from Cliente c where c.apellidos=:apellidos</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByNombres">
+            <jpa:query>Select c from Cliente c where c.nombres=:nombres</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="D" compositePrimaryKeyClass="VentaPK" abs="false" class="Venta" v="true" jbn="false" xre="false" m="false" rootElement="_15410138955801" id="_1541455650656">
+        <jpa:ath>Usser</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" name="fecha" ft="false" id="_154145588974016">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:temporal>DATE</jpa:temporal>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="true" connected-entity-id="_1541013917563" connected-attribute-id="_154145699925640" v="true" xvt="" name="mascota" id="_154145699925439">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:one-to-one>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="true" connected-entity-id="_1541013925812" connected-attribute-id="_154145703442242" v="true" xvt="" name="cliente" id="_154145703442241">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" ft="false" id="_154145565065910">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Venta.findAll">
+            <jpa:query>Select e from Venta e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Venta.findByCliente">
+            <jpa:query>Select v from Venta v where v.cliente=:cliente</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Venta.findByMascota">
+            <jpa:query>Select v from Venta v where v.mascota=:mascota</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Venta.findByFecha">
+            <jpa:query>Select v from Venta v where v.fecha=:fecha</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyType="D" compositePrimaryKeyClass="FotoPK" abs="false" class="Foto" v="true" jbn="false" xre="false" m="false" rootElement="_15410138955801" id="_1541456607040">
+        <jpa:ath>Usser</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="Longblob" v="true" xvt="" name="imagen" ft="false" id="_154145665176830">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true"/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="true" connected-entity-id="_1541013917563" connected-attribute-id="_154145693920738" v="true" xvt="" name="mascota" id="_154145693920637">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="int" v="true" xvt="" name="id" id="_154145660704128">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Foto.findAll">
+            <jpa:query>Select e from Foto e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Foto.findByImagen">
+            <jpa:query>Select f from Foto f where f.imagen=:imagen</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15410138955802">
+            <i ref="_1541013917563" x="78" y="11"/>
+            <i ref="_1541456607040" x="316" y="11"/>
+            <i ref="_1541013925812" x="78" y="258"/>
+            <i ref="_1541455650656" x="316" y="191"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

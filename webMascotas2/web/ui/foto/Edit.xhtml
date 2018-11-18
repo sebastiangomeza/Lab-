@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditFotoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditFotoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{fotoController.selected.id}" title="#{bundle.EditFotoTitle_id}" />
+                    <h:outputLabel value="#{bundle.EditFotoLabel_imagen}" for="imagen" />
+                    <h:inputText id="imagen" value="#{fotoController.selected.imagen}" title="#{bundle.EditFotoTitle_imagen}" required="true" requiredMessage="#{bundle.EditFotoRequiredMessage_imagen}"/>
+                    <h:outputLabel value="#{bundle.EditFotoLabel_mascota}" for="mascota" />
+                    <h:selectOneMenu id="mascota" value="#{fotoController.selected.mascota}" title="#{bundle.EditFotoTitle_mascota}" >
+                        <f:selectItems value="#{mascotaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{fotoController.update}" value="#{bundle.EditFotoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditFotoViewLink}"/>
+                <br />
+                <h:commandLink action="#{fotoController.prepareList}" value="#{bundle.EditFotoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditFotoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
