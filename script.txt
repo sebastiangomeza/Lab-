@@ -1,0 +1,65 @@
+CREATE TABLE Cliente (
+
+    nombres VARCHAR(255) NOT NULL,
+
+    apellidos VARCHAR(255) NOT NULL,
+
+    cedula INT,
+
+    PRIMARY KEY (cedula)
+
+);
+
+ 
+
+CREATE TABLE Mascota (
+
+    id INT NOT NULL AUTO_INCREMENT,
+
+    nombre VARCHAR(6) NOT NULL,
+
+    edad INT NOT NULL,
+
+    color VARCHAR(255) NOT NULL,
+
+    raza VARCHAR(100) NOT NULL,
+
+    valor INT NOT NULL,
+
+    PRIMARY KEY (id)
+
+);
+
+ 
+
+CREATE TABLE Venta (
+
+    id INT NOT NULL AUTO_INCREMENT,
+
+    cliente INT,
+
+    mascota INT,
+
+    fecha DATE NOT NULL,
+
+    PRIMARY KEY (id),
+
+    FOREIGN KEY (cliente) REFERENCES Cliente(cedula),
+
+    FOREIGN KEY (Mascota) REFERENCES Mascota(id)
+
+);
+
+ 
+
+CREATE TABLE Foto (
+
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+        mascota INT NOT NULL,
+
+        imagen LONGBLOB NOT NULL,
+
+FOREIGN KEY (Mascota) REFERENCES Mascota(id)
+
+);
